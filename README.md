@@ -1,6 +1,6 @@
 Puppeteer Autotype!
 
-Have you ever wanted to show off your typing skills, yet you realized that you suck? Then this repository is for you!
+Have you ever wanted to show off your typing skills, yet you realized that you suck? Then this (1-hour project) repository is for you!
 
 Steps:
 1. git clone https://github.com/mizutee/monkeytype-puppeteer.git
