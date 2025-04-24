@@ -1,5 +1,8 @@
 const puppeteer = require('puppeteer');
 
+// You can choose between 15, 30, 60 and 120 seconds
+const testTimeDuration = 15;
+
 (async () => {
     const browser = await puppeteer.launch({ headless: false })
     const page = await browser.newPage()
@@ -13,6 +16,8 @@ const puppeteer = require('puppeteer');
         await modal.click('button. active acceptAll')
     }
     const app = await page.waitForSelector('#app main .page.pageTest.full-width.content-grid.active #typingTest #wordsWrapper #words')
+    const testTime = await page.waitForSelector(`button.textButton[timeconfig="${testTimeDuration}"]`);
+    await testTime.click();
     while (true) {
         try {
             let activeWords = await app.waitForSelector('.word.active', { timeout: '3000' })
